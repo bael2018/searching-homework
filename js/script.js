@@ -9,35 +9,45 @@ const Players = [
         country: 'Ukraine',
         team: 'Natus Vincere',
         role: 'Awper',
-        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/S1mple-CS-GO.jpeg'
+        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/S1mple-CS-GO.jpeg',
+        isLiked: null,
+        id: 1
     },
     {
         nickname: "electronic",
         country: 'Russia',
         team: 'Natus Vincere',
         role: 'Rifler',
-        image: 'https://navi.gg/upload/faLekGG/StarSeries%20S5/electronic.jpeg'
+        image: 'https://navi.gg/upload/faLekGG/StarSeries%20S5/electronic.jpeg',
+        isLiked: null,
+        id: 2
     },
     {
         nickname: "Boombl4",
         country: 'Russia',
         team: 'Natus Vincere',
         role: 'Leader',
-        image: 'https://paragamersesport.com/wp-content/uploads/2021/01/Boombl4.jpeg'
+        image: 'https://paragamersesport.com/wp-content/uploads/2021/01/Boombl4.jpeg',
+        isLiked: null,
+        id: 3
     },
     {
         nickname: "Perfecto",
         country: 'Russia',
         team: 'Natus Vincere',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/3FyhQAa3Nh2Je2T8Yc2UW2.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C4%2C451%2C451&w=800&s=314865376bbb0e5e8f22e85c6675a1d4'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/3FyhQAa3Nh2Je2T8Yc2UW2.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C4%2C451%2C451&w=800&s=314865376bbb0e5e8f22e85c6675a1d4',
+        isLiked: null,
+        id: 4
     },
     {
         nickname: "B1T",
         country: 'Ukraine',
         team: 'Natus Vincere',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/JFOeo3DP-Jj6p6KbhW7Je2.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=132%2C16%2C459%2C459&w=800&s=49129df05088024313c4b45a3e35f70b'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/JFOeo3DP-Jj6p6KbhW7Je2.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=132%2C16%2C459%2C459&w=800&s=49129df05088024313c4b45a3e35f70b',
+        isLiked: null,
+        id: 5
     },
 
     // Astralis
@@ -47,35 +57,45 @@ const Players = [
         country: 'Denmark',
         team: 'Astralis',
         role: 'Awper',
-        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/Device-CS-GO.jpeg'
+        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/Device-CS-GO.jpeg',
+        isLiked: null,
+        id: 6
     },
     {
         nickname: "dupreeh",
         country: 'Denmark',
         team: 'Astralis',
         role: 'Rifler',
-        image: 'https://progearandsettings.com/wp-content/uploads/2019/03/dupreeh.jpeg'
+        image: 'https://progearandsettings.com/wp-content/uploads/2019/03/dupreeh.jpeg',
+        isLiked: null,
+        id: 7
     },
     {
         nickname: "Xyp9x",
         country: 'Denmark',
         team: 'Astralis',
         role: 'Rifler',
-        image: 'https://progearandsettings.com/wp-content/uploads/2019/03/xyp9x.jpeg'
+        image: 'https://progearandsettings.com/wp-content/uploads/2019/03/xyp9x.jpeg',
+        isLiked: null,
+        id: 8
     },
     {
         nickname: "gla1ve",
         country: 'Denmark',
         team: 'Astralis',
         role: 'Leader',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/XrOWRACzHSb71Dul1WFXyo.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C4%2C459%2C459&w=800&s=f4be9c0e40864f355e79c35b4d384fbc'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/XrOWRACzHSb71Dul1WFXyo.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C4%2C459%2C459&w=800&s=f4be9c0e40864f355e79c35b4d384fbc',
+        isLiked: null,
+        id: 9
     },
     {
         nickname: "Magisk",
         country: 'Denmark',
         team: 'Astralis',
         role: 'Rifler',
-        image: 'https://progearandsettings.com/wp-content/uploads/2019/03/magisk.jpeg'
+        image: 'https://progearandsettings.com/wp-content/uploads/2019/03/magisk.jpeg',
+        isLiked: null,
+        id: 10
     },
 
     // Vitality
@@ -85,35 +105,45 @@ const Players = [
         country: 'France',
         team: 'Vitality',
         role: 'Leader',
-        image: 'https://svirtus.cdnvideo.ru/FznxLP5Ez76VKYQmor83lxilU1o=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/06/06952fdf83e5250836c87e0a01f74899.png?m=2ac00f7ecb01efdde01ae2d0569446e6'
+        image: 'https://svirtus.cdnvideo.ru/FznxLP5Ez76VKYQmor83lxilU1o=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/06/06952fdf83e5250836c87e0a01f74899.png?m=2ac00f7ecb01efdde01ae2d0569446e6',
+        isLiked: null,
+        id: 11
     },
     {
         nickname: "ZywOo",
         country: 'France',
         team: 'Vitality',
         role: 'Awper',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/mxdFjJ-XPIwD6Nsg5TIHtt.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=156%2C4%2C401%2C401&w=800&s=753532fe29e79e0c86733f5d060a9b67'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/mxdFjJ-XPIwD6Nsg5TIHtt.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=156%2C4%2C401%2C401&w=800&s=753532fe29e79e0c86733f5d060a9b67',
+        isLiked: null,
+        id: 12
     },
     {
         nickname: "misutaaa",
         country: 'France',
         team: 'Vitality',
         role: 'Rifler',
-        image: 'https://ggscore.com/media/logo/p19517.png'
+        image: 'https://ggscore.com/media/logo/p19517.png',
+        isLiked: null,
+        id: 13
     },
     {
         nickname: "shox",
         country: 'France',
         team: 'Vitality',
         role: 'Rifler',
-        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/Shox-CS-GO.jpeg'
+        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/Shox-CS-GO.jpeg',
+        isLiked: null,
+        id: 14
     },
     {
         nickname: "Nivera",
         country: 'France',
         team: 'Vitalty',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/jCU9PM58-W3Vfzc7GKGpNk.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=132%2C12%2C432%2C432&w=800&s=ef19ab82d4f419b14b643cc978b4f09a'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/jCU9PM58-W3Vfzc7GKGpNk.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=132%2C12%2C432%2C432&w=800&s=ef19ab82d4f419b14b643cc978b4f09a',
+        isLiked: null,
+        id: 15
     },
 
     // Liquid
@@ -123,35 +153,45 @@ const Players = [
         country: 'USA',
         team: 'Liquid',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/YQMbQk5HIRApZFVG3rujIr.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=136%2C4%2C447%2C447&w=800&s=a4ae55bf02a4cf30ee44fd70acc06a00'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/YQMbQk5HIRApZFVG3rujIr.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=136%2C4%2C447%2C447&w=800&s=a4ae55bf02a4cf30ee44fd70acc06a00',
+        isLiked: null,
+        id: 16
     },
     {
         nickname: "NAF",
         country: 'Canada',
         team: 'Liquid',
         role: 'Rilfer',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/vgRnVqGhGuPULEh6zsqa8_.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C16%2C412%2C412&w=800&s=942fd2408bbdc47bd375cb809b1060ed'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/vgRnVqGhGuPULEh6zsqa8_.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C16%2C412%2C412&w=800&s=942fd2408bbdc47bd375cb809b1060ed',
+        isLiked: null,
+        id: 17
     },
     {
         nickname: "Stewie2K",
         country: 'USA',
         team: 'Liquid',
         role: 'Awper',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/z0xReVzWHD-El6SehigdXP.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=140%2C8%2C439%2C439&w=800&s=33cbc2f26251016ddbd7a248555971ee'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/z0xReVzWHD-El6SehigdXP.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=140%2C8%2C439%2C439&w=800&s=33cbc2f26251016ddbd7a248555971ee',
+        isLiked: null,
+        id: 18
     },
     {
         nickname: "Grim",
         country: 'USA',
         team: 'Liquid',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/xGuBr6T72bwfDFWhZF08_A.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=128%2C8%2C451%2C451&w=800&s=eaa5a648f04e037f1d33cb1439330a25'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/xGuBr6T72bwfDFWhZF08_A.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=128%2C8%2C451%2C451&w=800&s=eaa5a648f04e037f1d33cb1439330a25',
+        isLiked: null,
+        id: 19
     },
     {
         nickname: "FalleN",
         country: 'Brazil',
         team: 'Liquid',
         role: 'Leader',
-        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/FalleN-CS-GO.jpeg'
+        image: 'https://www.heavybullets.com/wp-content/uploads/2020/01/FalleN-CS-GO.jpeg',
+        isLiked: null,
+        id: 20
     },
 
     // Gambit
@@ -161,35 +201,45 @@ const Players = [
         country: 'Russia',
         team: 'Gambit',
         role: 'Leader',
-        image: 'https://svirtus.cdnvideo.ru/QmXI9zvUq8Immt9XaeJ_vEk3zQY=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/a2/a259b9c579a8554fa9239ad0e099d3f8.png?m=bc1a2130919e8757f50dee01d4aeda74'
+        image: 'https://svirtus.cdnvideo.ru/QmXI9zvUq8Immt9XaeJ_vEk3zQY=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/a2/a259b9c579a8554fa9239ad0e099d3f8.png?m=bc1a2130919e8757f50dee01d4aeda74',
+        isLiked: null,
+        id: 21
     },
     {
         nickname: "sh1ro",
         country: 'Russia',
         team: 'Gambit',
         role: 'Awper',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/EtMq1CXEq0ds96CzKjI4N0.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C16%2C463%2C463&w=800&s=13ff89ce4c511f6c3390793fe012cca9'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/EtMq1CXEq0ds96CzKjI4N0.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C16%2C463%2C463&w=800&s=13ff89ce4c511f6c3390793fe012cca9',
+        isLiked: null,
+        id: 22
     },
     {
         nickname: "interz",
         country: 'Russia',
         team: 'Gambit',
         role: 'Rifler',
-        image: 'https://ho8ssabqvb.a.trbcdn.net/wp-content/uploads/2019/09/interz.jpeg'
+        image: 'https://ho8ssabqvb.a.trbcdn.net/wp-content/uploads/2019/09/interz.jpeg',
+        isLiked: null,
+        id: 23
     },
     {
         nickname: "Ax1Le",
         country: 'Russia',
         team: 'Gambit',
         role: 'Rifler',
-        image: 'https://svirtus.cdnvideo.ru/GFwKBCx3Xi0hCtnKlPR4u-f3QLM=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/f0/f0b8d7c32b9cc5f244404ee6c532b589.png?m=cf09067ec69a257eaf203b23ba6c9a31'
+        image: 'https://svirtus.cdnvideo.ru/GFwKBCx3Xi0hCtnKlPR4u-f3QLM=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/f0/f0b8d7c32b9cc5f244404ee6c532b589.png?m=cf09067ec69a257eaf203b23ba6c9a31',
+        isLiked: null,
+        id: 24
     },
     {
         nickname: "Hobbit",
         country: 'Kazakhstan',
         team: 'Gambit',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/gUsi_5fbyAayALSYBLcTiv.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=136%2C19%2C443%2C443&w=800&s=d57a8c4ebf194434a386a19d3dd03da9'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/gUsi_5fbyAayALSYBLcTiv.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=136%2C19%2C443%2C443&w=800&s=d57a8c4ebf194434a386a19d3dd03da9',
+        isLiked: null,
+        id: 25
     },
 
     // G2
@@ -199,35 +249,45 @@ const Players = [
         country: 'France',
         team: 'G2',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/Pvs1o_HbcEfG-w9yNkx0IW.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C0%2C424%2C424&w=800&s=a6bcb081bd14145011da9d8d74a263a3'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/Pvs1o_HbcEfG-w9yNkx0IW.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C0%2C424%2C424&w=800&s=a6bcb081bd14145011da9d8d74a263a3',
+        isLiked: null,
+        id: 26
     },
     {
         nickname: "AmaNEk",
         country: 'France',
         team: 'G2',
         role: 'Awper',
-        image: 'https://cdn-bibla.nitrocdn.com/LNNfijkljbnJobbXewDMpNJbWqjUdgxu/assets/static/optimized/wp-content/uploads/2020/03/8f0728c06241b5fd509a989124e05144.amanek-585x585.jpeg'
+        image: 'https://cdn-bibla.nitrocdn.com/LNNfijkljbnJobbXewDMpNJbWqjUdgxu/assets/static/optimized/wp-content/uploads/2020/03/8f0728c06241b5fd509a989124e05144.amanek-585x585.jpeg',
+        isLiked: null,
+        id: 27
     },
     {
         nickname: "huNter",
         country: 'Serbia',
         team: 'G2',
         role: 'Rifler',
-        image: 'https://cdn-bibla.nitrocdn.com/LNNfijkljbnJobbXewDMpNJbWqjUdgxu/assets/static/optimized/wp-content/uploads/2020/03/df663a3f5afbee1e6d86878b9f767308.hunter-csgo-585x585.jpeg'
+        image: 'https://cdn-bibla.nitrocdn.com/LNNfijkljbnJobbXewDMpNJbWqjUdgxu/assets/static/optimized/wp-content/uploads/2020/03/df663a3f5afbee1e6d86878b9f767308.hunter-csgo-585x585.jpeg',
+        isLiked: null,
+        id: 28
     },
     {
         nickname: "nexa",
         country: 'Serbia',
         team: 'G2',
         role: 'Leader',
-        image: 'https://www.bestgamingsettings.com/wp-content/uploads/2020/03/Nexa.jpg'
+        image: 'https://www.bestgamingsettings.com/wp-content/uploads/2020/03/Nexa.jpg',
+        isLiked: null,
+        id: 29
     },
     {
         nickname: "NiKo",
         country: 'Serbia',
         team: 'G2',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/SCtIOZvt98WoZNgw8VGAQ4.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=152%2C12%2C420%2C420&w=800&s=b70cc627deabeb9b3b1f4cddf3be8f85'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/SCtIOZvt98WoZNgw8VGAQ4.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=152%2C12%2C420%2C420&w=800&s=b70cc627deabeb9b3b1f4cddf3be8f85',
+        isLiked: null,
+        id: 30
     },
 
     // OG
@@ -237,35 +297,45 @@ const Players = [
         country: 'Finland',
         team: 'OG',
         role: 'Leader',
-        image: "https://img-cdn.hltv.org/playerbodyshot/wUvdV-WIhp8XGHYeFhFZzP.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=101%2C19%2C506%2C506&w=800&s=fad30d563582b193a413512997dec95a"
+        image: "https://img-cdn.hltv.org/playerbodyshot/wUvdV-WIhp8XGHYeFhFZzP.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=101%2C19%2C506%2C506&w=800&s=fad30d563582b193a413512997dec95a",
+        isLiked: null,
+        id: 31
     },
     {
         nickname: "valde",
         country: 'Denmark',
         team: 'OG',
         role: 'Rifler',
-        image: "https://img-cdn.hltv.org/playerbodyshot/TF69_F-myC56vtIk6nOoYa.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=113%2C19%2C494%2C494&w=800&s=358f87e1322662f7095b498df813fc12"
+        image: "https://img-cdn.hltv.org/playerbodyshot/TF69_F-myC56vtIk6nOoYa.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=113%2C19%2C494%2C494&w=800&s=358f87e1322662f7095b498df813fc12",
+        isLiked: null,
+        id: 32
     },
     {
         nickname: "mantuu",
         country: 'Poland',
         team: 'OG',
         role: 'Awper',
-        image: "https://img-cdn.hltv.org/playerbodyshot/1j87OTj2xW7zQ5hSWRGDfC.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=93%2C16%2C513%2C513&w=800&s=065ed72cf6b92abbf557d7bb6c02c63b"
+        image: "https://img-cdn.hltv.org/playerbodyshot/1j87OTj2xW7zQ5hSWRGDfC.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=93%2C16%2C513%2C513&w=800&s=065ed72cf6b92abbf557d7bb6c02c63b",
+        isLiked: null,
+        id: 33
     },
     {
         nickname: "niko",
         country: 'Denmark',
         team: 'OG',
         role: 'Rifler',
-        image: "https://www.prosettings.com/site/wp-content/uploads/2018/06/niko-csgo.jpg"
+        image: "https://www.prosettings.com/site/wp-content/uploads/2018/06/niko-csgo.jpg",
+        isLiked: null,
+        id: 34
     },
     {
         nickname: "flameZ",
         country: 'Israel',
         team: 'OG',
         role: 'Rifler',
-        image: "https://svirtus.cdnvideo.ru/QgpO48G1Ts-JIEYFjAtZcSMfkNU=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/7a/7af38a65cc3dd424b1bfdb13f4a5a3a8.png?m=22d69aa120daaa94033b6b87618256e5"
+        image: "https://svirtus.cdnvideo.ru/QgpO48G1Ts-JIEYFjAtZcSMfkNU=/0x0:800x800/800x0/filters:quality(100)/https://hb.bizmrg.com/cybersportru-media/7a/7af38a65cc3dd424b1bfdb13f4a5a3a8.png?m=22d69aa120daaa94033b6b87618256e5",
+        isLiked: null,
+        id: 35
     },
 
     // Heroic
@@ -275,35 +345,45 @@ const Players = [
         country: 'Denmark',
         team: 'Heroic',
         role: 'Awper',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/ebX1nyC7pzo5bLwDtkmabc.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C16%2C482%2C482&w=800&s=536701164a00aa5419fb7983d73cf7a5'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/ebX1nyC7pzo5bLwDtkmabc.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C16%2C482%2C482&w=800&s=536701164a00aa5419fb7983d73cf7a5',
+        isLiked: null,
+        id: 36
     },
     {
         nickname: "cadiaN",
         country: 'Denmark',
         team: 'Heroic',
         role: 'Leader',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/QQ61eqccSn_egB_OCkOkg9.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=121%2C8%2C482%2C482&w=800&s=259bb7601332359a4022bbd9eca050aa'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/QQ61eqccSn_egB_OCkOkg9.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=121%2C8%2C482%2C482&w=800&s=259bb7601332359a4022bbd9eca050aa',
+        isLiked: null,
+        id: 37
     },
     {
         nickname: "TeSeS",
         country: 'Denmark',
         team: 'Heroic',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/6hSNbL27oIt8TRAcHyd1K7.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=121%2C12%2C482%2C482&w=800&s=0e63c43d9602b8c22de46074da902848'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/6hSNbL27oIt8TRAcHyd1K7.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=121%2C12%2C482%2C482&w=800&s=0e63c43d9602b8c22de46074da902848',
+        isLiked: null,
+        id: 38
     },
     {
         nickname: "refrezh",
         country: 'Denmark',
         team: 'Heroic',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/o9Xo_0hMD1ZYQNRzlnDTA2.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=128%2C12%2C474%2C474&w=800&s=a2bae3f3860b569e35b63cdc1783c8c1'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/o9Xo_0hMD1ZYQNRzlnDTA2.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=128%2C12%2C474%2C474&w=800&s=a2bae3f3860b569e35b63cdc1783c8c1',
+        isLiked: null,
+        id: 39
     },
     {
         nickname: "sjuush",
         country: 'Denmark',
         team: 'Heroic',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/iYIRihKwp8zTSM-nOhgzzD.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=121%2C12%2C490%2C490&w=800&s=a8a57b52e1e6a4a68a89de44ca9523f2'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/iYIRihKwp8zTSM-nOhgzzD.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=121%2C12%2C490%2C490&w=800&s=a8a57b52e1e6a4a68a89de44ca9523f2',
+        isLiked: null,
+        id: 40
     },
 
     // Furia
@@ -313,35 +393,45 @@ const Players = [
         country: 'Brazil',
         team: 'Furia',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/h55bki0B3-314Gw2EuN3yI.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=140%2C12%2C436%2C436&w=800&s=6512a306fa65996029e409db765ac504'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/h55bki0B3-314Gw2EuN3yI.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=140%2C12%2C436%2C436&w=800&s=6512a306fa65996029e409db765ac504',
+        isLiked: null,
+        id: 41
     },
     {
         nickname: "arT",
         country: 'Brazil',
         team: 'Furia',
         role: 'Leader',
-        image: 'https://navi.gg/upload/faLekGG/players2019/art.jpeg'
+        image: 'https://navi.gg/upload/faLekGG/players2019/art.jpeg',
+        isLiked: null,
+        id: 42
     },
     {
         nickname: "VINI",
         country: 'Brazil',
         team: 'Furia',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/eUVJFdb3bBU1Di8ljlM66t.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C4%2C443%2C443&w=800&s=58ccc8ab83790c978327f7d14a10cc4d'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/eUVJFdb3bBU1Di8ljlM66t.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=144%2C4%2C443%2C443&w=800&s=58ccc8ab83790c978327f7d14a10cc4d',
+        isLiked: null,
+        id: 43
     },
     {
         nickname: "KSCERATO",
         country: 'Brazil',
         team: 'Furia',
         role: 'Rifler',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/rX-eBSkC_W4FIW7RFVnA8s.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=140%2C12%2C443%2C443&w=800&s=88bf4f3cf37ff0bc3080f5d1c7ce1a3a'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/rX-eBSkC_W4FIW7RFVnA8s.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=140%2C12%2C443%2C443&w=800&s=88bf4f3cf37ff0bc3080f5d1c7ce1a3a',
+        isLiked: null,
+        id: 44
     },
     {
         nickname: "junior",
         country: 'USA',
         team: 'Furia',
         role: 'Awper',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/o9XdaTW1QskuaUqjFC1ObW.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C12%2C463%2C463&w=800&s=2ab5e168de7963dd2757f77a17b065bd'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/o9XdaTW1QskuaUqjFC1ObW.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=124%2C12%2C463%2C463&w=800&s=2ab5e168de7963dd2757f77a17b065bd',
+        isLiked: null,
+        id: 45
     },
 
     //  NIP
@@ -351,35 +441,45 @@ const Players = [
         country: 'Sweden',
         team: 'NIP',
         role: 'Rifler',
-        image: 'https://navi.gg/upload/faLekGG/ESL%20PL%20S8/rez.jpeg'
+        image: 'https://navi.gg/upload/faLekGG/ESL%20PL%20S8/rez.jpeg',
+        isLiked: null,
+        id: 46
     },
     {
         nickname: "Plopski",
         country: 'Sweden',
         team: 'NIP',
         role: 'Leader',
-        image: 'https://g.fp.ps.netease.com/market/file/5f6c019f6f04945e05f5ae661AY2d1r602'
+        image: 'https://g.fp.ps.netease.com/market/file/5f6c019f6f04945e05f5ae661AY2d1r602',
+        isLiked: null,
+        id: 47
     },
     {
         nickname: "nawwk",
         country: 'Sweden',
         team: 'NIP',
         role: 'Awper',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/4037MiudNhQd3SIocycKTJ.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=132%2C16%2C451%2C451&w=800&s=0f7a5d4bfb8c57e7e1caf63ab3b3dd10'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/4037MiudNhQd3SIocycKTJ.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=132%2C16%2C451%2C451&w=800&s=0f7a5d4bfb8c57e7e1caf63ab3b3dd10',
+        isLiked: null,
+        id: 48
     },
     {
         nickname: "hampus",
         country: 'Sweden',
         team: 'NIP',
         role: 'Leader',
-        image: 'https://img-cdn.hltv.org/playerbodyshot/c8Zuac20HpzF0QF8ZP92Rd.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=128%2C12%2C459%2C459&w=800&s=70888c366292745ed07837b3873c7394'
+        image: 'https://img-cdn.hltv.org/playerbodyshot/c8Zuac20HpzF0QF8ZP92Rd.png?bg=3e4c54&h=800&ixlib=java-2.1.0&rect=128%2C12%2C459%2C459&w=800&s=70888c366292745ed07837b3873c7394',
+        isLiked: null,
+        id: 49
     },
     {
         nickname: "GeT_RiGhT",
         country: 'Sweden',
         team: 'NIP',
         role: 'Rifler',
-        image: 'https://www.tobyscs.com/files/get_right_csgo_settings.jpg'
+        image: 'https://www.tobyscs.com/files/get_right_csgo_settings.jpg',
+        isLiked: null,
+        id: 50
     },
 ]
 
@@ -393,10 +493,12 @@ const searcTeam = document.querySelector('.searcTeam')
 searchName.addEventListener('input' , e => {
     const value = e.target.value.toUpperCase()
 
+    const filterTemplate = JSON.parse(localStorage.getItem('players'))
+
     searchCountry.value = ''
     searcTeam.value = ''
 
-    const filteredCard = Players.filter(({nickname}) => nickname.toUpperCase().includes(value))
+    const filteredCard = filterTemplate.filter(({nickname}) => nickname.toUpperCase().includes(value))
     showCards(filteredCard)
 })
 
@@ -405,7 +507,9 @@ searchCountry.addEventListener('input' , e => {
     searchName.value = ''
     searcTeam.value = ''
 
-    const filteredCard = Players.filter(({country}) => country.toUpperCase().includes(value))
+    const filterTemplate = JSON.parse(localStorage.getItem('players'))
+
+    const filteredCard = filterTemplate.filter(({country}) => country.toUpperCase().includes(value))
     showCards(filteredCard)
 })
 
@@ -413,55 +517,269 @@ searcTeam.addEventListener('input' , e => {
     const value = e.target.value.toUpperCase()
 
     searchCountry.value = ''
+
+    const filterTemplate = JSON.parse(localStorage.getItem('players'))
     searchName.value = ''
     
-    const filteredCard = Players.filter(({team}) => team.toUpperCase().includes(value))
+    const filteredCard = filterTemplate.filter(({team}) => team.toUpperCase().includes(value))
     showCards(filteredCard)
 })
 
-// Searchings //
-
-function adding(arr){
-    const res = arr.map((item , index) => {
-        return {
-            ...item,
-            id: index 
-        }
-    })
-    localStorage.setItem('players' , JSON.stringify(res))
-}
-adding(Players)
+window.addEventListener('load' , () => {
+    if((localStorage.getItem('players'))){
+        return 
+    }else{
+        localStorage.setItem('players' , JSON.stringify(Players))
+    }
+})
 
 const getting = JSON.parse(localStorage.getItem('players'))
 
 function showCards(arr){
-    const template = arr.map(({nickname , image , country , team , role , id}) => {
-        return `  <div class="block1_inner">
-        <div class="block1_title">
-            <h2>${nickname}</h2>
-        </div>
-        <div class="block1_picture" style="background: url('${image}') center / cover"></div>
-        <div class='block1_content'>
-            <ul>
-                <li>${country}</li>
-                <li>${team}</li>
-                <li>${role}</li>
-            </ul>
-
-            <div>
-                <button onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
-                <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+    const template = arr.map(({nickname , image , country , team , role , id, isLiked}) => {
+        if(isLiked === null){
+            return `  <div class="block1_inner">
+            <div class="block1_title">
+                <h2>${nickname}</h2>
             </div>
-        </div>
-        
-        <div class="centerBtn">
-            <button onclick="infoAppearBlock(${id})">more info</button>
-        </div>
-    </div>`
+            <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+            <div class='block1_content'>
+                <ul>
+                    <li>${country}</li>
+                    <li>${team}</li>
+                    <li>${role}</li>
+                </ul>
+    
+                <div>
+                    <button onclick='favFunc(${id})'><i style="color: white" class="far fa-thumbs-up allBtn"></i></button>
+                    <button onclick='unfavFunc(${id})'><i style="color: white" class="far fa-thumbs-down"></i></button>
+                </div>
+            </div>
+            <div class="centerBtn">
+                <button onclick="editCard(${id})">Edit</button>
+                <button onclick="deleteCard(${id})">Delete</button>
+                <button onclick="infoAppearBlock(${id})">more info</button>
+            </div>
+        </div>`
+        }else if(isLiked === false){
+            return `  <div class="block1_inner">
+            <div class="block1_title">
+                <h2>${nickname}</h2>
+            </div>
+            <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+            <div class='block1_content'>
+                <ul>
+                    <li>${country}</li>
+                    <li>${team}</li>
+                    <li>${role}</li>
+                </ul>
+    
+                <div>
+                    <button onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
+                    <button onclick='unfavFunc(${id})'><i style="color: red" class="far fa-thumbs-down"></i></button>
+                </div>
+            </div>
+            <div class="centerBtn">
+                <button onclick="editCard(${id})">Edit</button>
+                <button onclick="deleteCard(${id})">Delete</button>
+                <button onclick="infoAppearBlock(${id})">more info</button>
+            </div>
+        </div>`
+        }else if(isLiked === true){
+            return `  <div class="block1_inner">
+            <div class="block1_title">
+                <h2>${nickname}</h2>
+            </div>
+            <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+            <div class='block1_content'>
+                <ul>
+                    <li>${country}</li>
+                    <li>${team}</li>
+                    <li>${role}</li>
+                </ul>
+    
+                <div>
+                    <button onclick='favFunc(${id})'><i style="color: yellow" class="far fa-thumbs-up allBtn"></i></button>
+                    <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                </div>
+            </div>
+            <div class="centerBtn">
+                <button onclick="editCard(${id})">Edit</button>
+                <button onclick="deleteCard(${id})">Delete</button>
+                <button onclick="infoAppearBlock(${id})">more info</button>
+            </div>
+        </div>`
+        }   
     }).join('')
     container.innerHTML = template;
 }
 window.addEventListener('load' , showCards(getting));
+
+// FavBtn
+
+function favFunc(id){
+    const players = JSON.parse(localStorage.getItem('players'))
+    const addFav = players.map(item => {
+        if(item.id === id){
+            return {
+                ...item,
+                isLiked: true
+            }
+        }else{
+            return item
+        }
+    })
+    localStorage.setItem('players' , JSON.stringify(addFav))
+    window.location.reload()
+}
+
+// UnFavBtn
+
+function unfavFunc(id){
+    const players = JSON.parse(localStorage.getItem('players'))
+    const addFav = players.map(item => {
+        if(item.id === id){
+            return {
+                ...item,
+                isLiked: false
+            }
+        }else{
+            return item
+        }
+    })
+    localStorage.setItem('players' , JSON.stringify(addFav))
+    window.location.reload()
+}
+
+// deleteCard
+
+function editCard(id){
+    const edit = document.querySelector('.edit_container')
+    const createBtn = document.querySelector('.create')
+    const closeBtn = document.querySelector('.close')
+
+    const newNickname = document.querySelector('.newNickname')
+    const newImage = document.querySelector('.newImage')
+    const newCountry = document.querySelector('.newCountry')
+    const newTeam = document.querySelector('.newTeam')
+    const newRole = document.querySelector('.newRole')
+    
+    edit.classList.toggle('show')
+
+    createBtn.addEventListener('click' , e => {
+        e.preventDefault()
+
+        const players = JSON.parse(localStorage.getItem('players'))
+        const newPlayers = players.map(item => {
+            if(item.id === id){
+                if(newNickname.value === '' || newCountry.value === '' || newTeam.value === '' || newRole.value === ''){
+                    return item
+                }else if(newNickname.value !== '' && newCountry.value !== '' && newTeam.value !== '' && newRole.value !== ''){
+                    return {
+                        ...item,
+                        nickname: newNickname.value,
+                        image: newImage.value,
+                        country: newCountry.value,
+                        team: newTeam.value,
+                        role: newRole.value
+                    }
+                }
+            }else{
+                return item
+            }
+        })
+        localStorage.setItem('players' , JSON.stringify(newPlayers))
+        window.location.reload()
+    })
+
+    closeBtn.addEventListener('click' , e => {
+        e.preventDefault();
+        edit.classList.remove('show')
+    })
+
+}
+
+// deleteCard
+
+function deleteCard(id){
+    const deleteContainer = document.querySelector('.delete_container')
+    const completeBtn = document.querySelector('.completeBtn')
+    const cancelBtn = document.querySelector('.cancelBtn')
+
+    deleteContainer.classList.toggle('delete')
+
+    completeBtn.addEventListener('click' , e => {
+        e.preventDefault()
+
+        const players = JSON.parse(localStorage.getItem('players'))
+        const addFav = players.filter(item => item.id !== id)
+        localStorage.setItem('players' , JSON.stringify(addFav))
+        window.location.reload()
+    })
+
+    cancelBtn.addEventListener('click' , e => {
+        e.preventDefault()
+        deleteContainer.classList.remove('delete')
+    })
+}
+
+// createBtn
+
+const createCard = document.querySelector('.createCardBtn')
+const cardContainers = document.querySelector('.create_container')
+
+createCard.addEventListener('click' , e => {
+    e.preventDefault();
+
+    cardContainers.classList.toggle('show')
+})
+
+const createCardConfirm = document.querySelector('.createCardConfirm')
+createCardConfirm.addEventListener('click' , e => {
+    e.preventDefault()
+
+    const newCardNickname = document.querySelector('.newCardNickname')
+    const newCardImage = document.querySelector('.newCardImage')
+    const newCardCountry = document.querySelector('.newCardCountry')
+    const newCardTeam = document.querySelector('.newCardTeam')
+    const newCardRole = document.querySelector('.newCardRole')
+
+    if(newCardNickname.value === '' || newCardImage.value === '' || newCardCountry.value === '' || newCardTeam.value === '' || newCardRole.value === ''){
+        return
+    }else if(newCardNickname.value !== '' || newCardImage.value !== '' || newCardCountry.value !== '' || newCardTeam.value !== '' || newCardRole.value !== ''){
+        const randomId = Math.floor(Math.random() * (1000 - 10) + 10)
+        const players = JSON.parse(localStorage.getItem('players'))
+        const newPlayers = players.map(item => {
+            if(randomId !== item.id){
+                const newCardTemplate = [
+                    {
+                        nickname: newCardNickname.value,
+                        image: newCardImage.value,
+                        country: newCardCountry.value,
+                        team: newCardTeam.value,
+                        role: newCardRole.value,
+                        isLiked: null,
+                        id: randomId
+                    }
+                ]
+                localStorage.setItem('newCardplayer' , JSON.stringify(newCardTemplate))
+                const getNewTemplate = [...Players , ... newCardTemplate]
+                console.log(getNewTemplate);
+                localStorage.setItem('players' , JSON.stringify(getNewTemplate))
+                window.location.reload()
+            }else{
+                return item
+            }
+        })
+    }
+})
+
+const closeCardCardConfirm = document.querySelector('.closeCardCardConfirm')
+closeCardCardConfirm.addEventListener('click' , e => {
+    e.preventDefault();
+
+    cardContainers.classList.remove('show')
+})
 
 // filter_player 
 

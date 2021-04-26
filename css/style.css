@@ -267,6 +267,9 @@ main{
 .centerBtn{
     text-align: center;
     margin: 10px 0;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .centerBtn button{
@@ -276,8 +279,15 @@ main{
     color: white;
     cursor: pointer;
     transition: .3s;
+    width: 40%;
     font-size: 15px;
+    margin-bottom: 30px;
     padding: 10px 30px;
+}
+
+.centerBtn button:nth-child(3){
+    width: 70%;
+    margin-bottom: 10px;
 }
 
 .centerBtn button:hover{
@@ -419,6 +429,19 @@ main{
         width: 90%;
         height: 90%;
     }
+
+    .block1_header{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .createCardBtn{
+        margin: 25px 0;
+        padding: 10px 0;
+        width: 150px;
+    }
 }
 
 @media screen and (max-width: 1150px){
@@ -437,13 +460,6 @@ main{
 
     .block1_body{
         justify-content: space-between;
-    }
-
-    .block1_header{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
     }
     
     .filter_player{
@@ -576,4 +592,298 @@ main{
     .block1_right_title h2{
         font-size: 28px;
     }
+}
+
+/* likedcolor */
+
+.isLikedNull{
+    color: #ccc;
+}
+
+.isLikedTrue{
+    color: red;
+}
+
+.isLikedFalse{
+    color: black;
+}
+
+
+/* edit_container */
+
+
+.edit_container{
+    width: 56%;
+    left: 20%;
+    position: fixed;
+    height: 480px;
+    border: 3px solid white;
+    background: rgb(56, 56, 56);
+    border-radius: 5px;
+    padding: 25px 2%;
+    z-index: 10;
+    pointer-events: none;
+    transform: scale(.8);
+    opacity: 0;
+    top: 10%;
+    transition: .3s;
+}
+
+.edit_container.show{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+.edit_header{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.edit_header h2{
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.edit_body{
+    margin-top: 30px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.edit_body div:nth-child(1){
+    width: 30%;
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: right;
+}
+
+.edit_body div:nth-child(1) p{
+    margin: 0px;
+}
+
+.edit_body div:nth-child(1) p:nth-child(1){
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.edit_body div:nth-child(1) p:nth-child(2),
+.edit_body div:nth-child(1) p:nth-child(3),
+.edit_body div:nth-child(1) p:nth-child(4){
+    margin-bottom: 25px;
+}
+
+.edit_body div:nth-child(2){
+    width: 70%;
+}
+
+.edit_body div:nth-child(2) input{
+    width: 80%;
+    margin-left: 30px;
+    outline: none;
+    color: white;
+    border: none;
+    padding: 20px 0;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    background: none;
+}
+
+::-webkit-input-placeholder {color: rgb(134, 134, 134);}
+
+.edit_footer{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.edit_footer button{
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+    border-radius: 5px;
+    margin: 0px 10px;
+    outline: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: none;
+}
+
+.edit_footer button:hover{
+    background: white;
+    color: rgb(34, 34, 34);
+}
+
+/*  delete_container  */
+
+.delete_container{
+    position: fixed;
+    width: 40%;
+    border: 3px solid white;
+    background: rgb(56, 56, 56);
+    z-index: 10;
+    left: 30%;
+    top: 45%;
+    transform: scale(.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+    border-radius: 5px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.delete_container.delete{
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+.delete_container p{
+    margin: 0px;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.delete_container button{
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+    border-radius: 5px;
+    margin: 0px 10px;
+    outline: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-size: 13px;
+    background: none;
+}
+
+.delete_container button:hover{
+    background: white;
+    color: rgb(34, 34, 34);
+}
+
+.createCardBtn{
+    background: white;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    width: 150px;
+}
+
+
+/* edit_container */
+
+
+.create_container{
+    width: 56%;
+    left: 20%;
+    position: fixed;
+    height: 480px;
+    border: 3px solid white;
+    background: rgb(56, 56, 56);
+    border-radius: 5px;
+    padding: 25px 2%;
+    z-index: 10;
+    pointer-events: none;
+    transform: scale(.8);
+    opacity: 0;
+    top: 10%;
+    transition: .3s;
+}
+
+.create_container.show{
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    pointer-events: all !important;
+}
+
+.create_header{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.create_header h2{
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.create_body{
+    margin-top: 30px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.create_body div:nth-child(1){
+    width: 30%;
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: right;
+}
+
+.create_body div:nth-child(1) p{
+    margin: 0px;
+}
+
+.create_body div:nth-child(1) p:nth-child(1){
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.create_body div:nth-child(1) p:nth-child(2),
+.create_body div:nth-child(1) p:nth-child(3),
+.create_body div:nth-child(1) p:nth-child(4){
+    margin-bottom: 25px;
+}
+
+.create_body div:nth-child(2){
+    width: 70%;
+}
+
+.create_body div:nth-child(2) input{
+    width: 80%;
+    margin-left: 30px;
+    outline: none;
+    color: white;
+    border: none;
+    padding: 20px 0;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    background: none;
+}
+
+.create_footer{
+    margin-top: 35px;
+    justify-content: center;
+    display: flex;
+}
+
+.create_footer button{
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+    border-radius: 5px;
+    margin: 0px 10px;
+    outline: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: none;
+}
+
+.create_footer button:hover{
+    background: white;
+    color: rgb(34, 34, 34);
 }

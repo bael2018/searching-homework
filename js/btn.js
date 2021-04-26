@@ -2,40 +2,6 @@
 
 const containers = document.querySelector('.block1_body')
 
-// FavBtn
-
-function favFunc(id){
-    const players = JSON.parse(localStorage.getItem('players'))
-    const addFav = players.map(item => {
-        if(item.id === id){
-            return {
-                ...item,
-                fav: true
-            }
-        }else{
-            return item
-        }
-    })
-    localStorage.setItem('players' , JSON.stringify(addFav))
-}
-
-// UnFavBtn
-
-function unfavFunc(id){
-    const players = JSON.parse(localStorage.getItem('players'))
-    const addFav = players.map(item => {
-        if(item.id === id){
-            return {
-                ...item,
-                unfav: true
-            }
-        }else{
-            return item
-        }
-    })
-    localStorage.setItem('players' , JSON.stringify(addFav))
-}
-
 const filter_player = document.querySelector('.filter_player')
 filter_player.addEventListener('change' , e => {
     e.preventDefault();
@@ -57,12 +23,14 @@ filter_player.addEventListener('change' , e => {
                     </ul>
         
                     <div>
-                        <button onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
+                        <button class='likeBtn' onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
                         <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
                     </div>
                 </div>
                 
                 <div class="centerBtn">
+                    <button onclick="editCard(${id})">Edit</button>
+                    <button onclick="deleteCard(${id})">Delete</button>
                     <button onclick="infoAppearBlock(${id})">more info</button>
                 </div>
             </div>`
@@ -72,8 +40,8 @@ filter_player.addEventListener('change' , e => {
         window.addEventListener('load' , showCards(getting));
     }else if(value === 'favorite'){
         const getNewPlayers = JSON.parse(localStorage.getItem('players'))
-        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , fav}) => {
-            if(fav === true){
+        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , isLiked}) => {
+            if(isLiked === true){
                 return `  <div class="block1_inner">
                     <div class="block1_title">
                         <h2>${nickname}</h2>
@@ -93,6 +61,8 @@ filter_player.addEventListener('change' , e => {
                     </div>
                     
                     <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
                         <button onclick="infoAppearBlock(${id})">more info</button>
                     </div>
                 </div>`
@@ -101,8 +71,8 @@ filter_player.addEventListener('change' , e => {
         containers.innerHTML = newTemplate;
     }else if(value === 'unfavorite'){
         const getNewPlayers = JSON.parse(localStorage.getItem('players'))
-        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , unfav}) => {
-            if(unfav === true){
+        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , isLiked}) => {
+            if(isLiked === false){
                 return `  <div class="block1_inner">
                     <div class="block1_title">
                         <h2>${nickname}</h2>
@@ -122,6 +92,8 @@ filter_player.addEventListener('change' , e => {
                     </div>
                     
                     <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
                         <button onclick="infoAppearBlock(${id})">more info</button>
                     </div>
                 </div>`

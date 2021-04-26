@@ -10,6 +10,66 @@
     <script src="https://kit.fontawesome.com/5c459b5eb0.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  
+  <div class="delete_container">
+    <p>Are you sure?</p>
+    <button class="completeBtn">complete</button>
+    <button class="cancelBtn">cancel</button>
+  </div>
+
+  <div class="edit_container">
+    <div class="edit_header">
+      <h2>Edit This Player</h2>
+    </div>
+    <div class="edit_body">
+      <div>
+        <p>Nickname:</p>
+        <p>Image:</p>
+        <p>Country:</p>
+        <p>Team:</p>
+        <p>Role:</p>
+      </div>
+
+      <div>
+        <input class="newNickname" placeholder="nickname" type="text">
+        <input class="newImage" placeholder="Image" type="text">
+        <input class="newCountry" placeholder="Country" type="text">
+        <input class="newTeam" placeholder="Team" type="text">
+        <input class="newRole" placeholder="Role" type="text">
+      </div>
+    </div>
+    <div class="edit_footer">
+      <button class="create">create</button>
+      <button class="close">close</button>
+    </div>
+  </div>
+
+  <div class="create_container">
+    <div class="create_header">
+      <h2>Create New Player</h2>
+    </div>
+    <div class="create_body">
+      <div>
+        <p>Nickname:</p>
+        <p>Image:</p>
+        <p>Country:</p>
+        <p>Team:</p>
+        <p>Role:</p>
+      </div>
+
+      <div>
+        <input class="newCardNickname" placeholder="nickname" type="text">
+        <input class="newCardImage" placeholder="Image" type="text">
+        <input class="newCardCountry" placeholder="Country" type="text">
+        <input class="newCardTeam" placeholder="Team" type="text">
+        <input class="newCardRole" placeholder="Role" type="text">
+      </div>
+    </div>
+    <div class="create_footer">
+      <button class="createCardConfirm">create</button>
+      <button class="closeCardCardConfirm">close</button>
+    </div>
+  </div>
     
     <header>
         <section class="header_block1">
@@ -32,6 +92,10 @@
                     <input class="searchName" placeholder="Search by name" type="search">
                     <input class="searchCountry" placeholder="Search by country" type="search">
                     <input class="searcTeam" placeholder="Search by team" type="search">
+                </div>
+
+                <div class="createCardBtn">
+                  New Player
                 </div>
     
                 <select class="form-select filter_player" aria-label="Default select example">

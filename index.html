@@ -10,6 +10,25 @@
     <script src="https://kit.fontawesome.com/5c459b5eb0.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="admin">
+    <div class="admin_container">
+      <div class="admin_header">
+        Sign in
+      </div>
+      <div class="admin_body">
+        <div>
+          <input placeholder="Name" type="text" class="adminName">
+        </div>
+        <div>
+          <input placeholder="Password" type="password" class="adminPassword">
+        </div>
+      </div>
+      <div class="admin_footer">
+        <button class="adminSignCreate">Sign in</button>
+        <button class="adminSignClose">Close</button>
+      </div>
+    </div>
+  </div>
   
   <div class="delete_container">
     <p>Are you sure?</p>
@@ -93,17 +112,27 @@
                     <input class="searchCountry" placeholder="Search by country" type="search">
                     <input class="searcTeam" placeholder="Search by team" type="search">
                 </div>
-
-                <div class="createCardBtn">
-                  New Player
-                </div>
-    
-                <select class="form-select filter_player" aria-label="Default select example">
-                    <option style="padding: 10px !important;" value="All">All</option>
-                    <option style="padding: 10px !important;" value="favorite">Favorite</option>
-                    <option style="padding: 10px !important;" value="unfavorite">Unfavorite</option>
-                </select>
             </div>
+
+            <section class="block1_middle">
+              <div class="createCardBtn">
+                New Player
+              </div>
+
+              <button class="signInBtn">
+                Sign in
+              </button>
+
+              <button class="signOutBtn">
+                Sign out
+              </button>
+
+              <select class="form-select filter_player" aria-label="Default select example">
+                <option style="padding: 10px !important;" value="All">All</option>
+                <option style="padding: 10px !important;" value="favorite">Favorite</option>
+                <option style="padding: 10px !important;" value="unfavorite">Unfavorite</option>
+            </select>
+            </section>
 
             <div class="block1_body"></div>
         </section>

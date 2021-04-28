@@ -488,43 +488,6 @@ const searchCountry = document.querySelector('.searchCountry')
 const container = document.querySelector('.block1_body')
 const searcTeam = document.querySelector('.searcTeam')
 
-// Searchings //
-
-searchName.addEventListener('input' , e => {
-    const value = e.target.value.toUpperCase()
-
-    const filterTemplate = JSON.parse(localStorage.getItem('players'))
-
-    searchCountry.value = ''
-    searcTeam.value = ''
-
-    const filteredCard = filterTemplate.filter(({nickname}) => nickname.toUpperCase().includes(value))
-    showCards(filteredCard)
-})
-
-searchCountry.addEventListener('input' , e => {
-    const value = e.target.value.toUpperCase()
-    searchName.value = ''
-    searcTeam.value = ''
-
-    const filterTemplate = JSON.parse(localStorage.getItem('players'))
-
-    const filteredCard = filterTemplate.filter(({country}) => country.toUpperCase().includes(value))
-    showCards(filteredCard)
-})
-
-searcTeam.addEventListener('input' , e => {
-    const value = e.target.value.toUpperCase()
-
-    searchCountry.value = ''
-
-    const filterTemplate = JSON.parse(localStorage.getItem('players'))
-    searchName.value = ''
-    
-    const filteredCard = filterTemplate.filter(({team}) => team.toUpperCase().includes(value))
-    showCards(filteredCard)
-})
-
 window.addEventListener('load' , () => {
     if((localStorage.getItem('players'))){
         return 
@@ -533,87 +496,533 @@ window.addEventListener('load' , () => {
     }
 })
 
-const getting = JSON.parse(localStorage.getItem('players'))
+window.addEventListener('load' , () => {
+    if(!localStorage.getItem('admin')){
+        localStorage.setItem('admin' , 'false')
+    }
+    const getadmin = localStorage.getItem('admin')
+    if(getadmin === 'true'){
 
-function showCards(arr){
-    const template = arr.map(({nickname , image , country , team , role , id, isLiked}) => {
-        if(isLiked === null){
-            return `  <div class="block1_inner">
-            <div class="block1_title">
-                <h2>${nickname}</h2>
-            </div>
-            <div class="block1_picture" style="background: url('${image}') center / cover"></div>
-            <div class='block1_content'>
-                <ul>
-                    <li>${country}</li>
-                    <li>${team}</li>
-                    <li>${role}</li>
-                </ul>
-    
-                <div>
-                    <button onclick='favFunc(${id})'><i style="color: white" class="far fa-thumbs-up allBtn"></i></button>
-                    <button onclick='unfavFunc(${id})'><i style="color: white" class="far fa-thumbs-down"></i></button>
+        searchName.addEventListener('input' , e => {
+            const value = e.target.value.toUpperCase()
+        
+            const filterTemplate = JSON.parse(localStorage.getItem('players'))
+        
+            searchCountry.value = ''
+            searcTeam.value = ''
+        
+            const filteredCard = filterTemplate.filter(({nickname}) => nickname.toUpperCase().includes(value))
+            showCards(filteredCard)
+        })
+        searchCountry.addEventListener('input' , e => {
+            const value = e.target.value.toUpperCase()
+            searchName.value = ''
+            searcTeam.value = ''
+        
+            const filterTemplate = JSON.parse(localStorage.getItem('players'))
+        
+            const filteredCard = filterTemplate.filter(({country}) => country.toUpperCase().includes(value))
+            showCards(filteredCard)
+        })
+        searcTeam.addEventListener('input' , e => {
+            const value = e.target.value.toUpperCase()
+        
+            searchCountry.value = ''
+        
+            const filterTemplate = JSON.parse(localStorage.getItem('players'))
+            searchName.value = ''
+            
+            const filteredCard = filterTemplate.filter(({team}) => team.toUpperCase().includes(value))
+            showCards(filteredCard)
+        })
+
+        const showAddPlayerBtn = document.querySelector('.createCardBtn')
+        showAddPlayerBtn.classList.toggle('show')
+
+        // createBtn
+
+        const createCard = document.querySelector('.createCardBtn')
+        const cardContainers = document.querySelector('.create_container')
+
+        createCard.addEventListener('click' , e => {
+            e.preventDefault();
+
+            cardContainers.classList.toggle('show')
+        })
+
+        const createCardConfirm = document.querySelector('.createCardConfirm')
+        createCardConfirm.addEventListener('click' , e => {
+            e.preventDefault()
+
+            const newCardNickname = document.querySelector('.newCardNickname')
+            const newCardImage = document.querySelector('.newCardImage')
+            const newCardCountry = document.querySelector('.newCardCountry')
+            const newCardTeam = document.querySelector('.newCardTeam')
+            const newCardRole = document.querySelector('.newCardRole')
+
+            if(newCardNickname.value === '' || newCardImage.value === '' || newCardCountry.value === '' || newCardTeam.value === '' || newCardRole.value === ''){
+                return 
+            }else if(newCardNickname.value !== '' || newCardImage.value !== '' || newCardCountry.value !== '' || newCardTeam.value !== '' || newCardRole.value !== ''){
+                const randomId = Math.floor(Math.random() * (1000 - 10) + 10)
+                const players = JSON.parse(localStorage.getItem('players'))
+                const newPlayers = players.map(item => {
+                    if(randomId !== item.id){
+                        const newCardTemplate = [
+                            {
+                                nickname: newCardNickname.value,
+                                image: newCardImage.value,
+                                country: newCardCountry.value,
+                                team: newCardTeam.value,
+                                role: newCardRole.value,
+                                isLiked: null,
+                                id: randomId
+                            }
+                        ]
+                        localStorage.setItem('newCardplayer' , JSON.stringify(newCardTemplate))
+                        const getNewTemplate = [...Players , ...newCardTemplate]
+                        console.log(getNewTemplate);
+                        localStorage.setItem('players' , JSON.stringify(getNewTemplate))
+                        window.location.reload()
+                    }else{
+                        return item
+                    }
+                })
+            }
+        })
+
+        const closeCardCardConfirm = document.querySelector('.closeCardCardConfirm')
+        closeCardCardConfirm.addEventListener('click' , e => {
+            e.preventDefault();
+
+            cardContainers.classList.remove('show')
+        })
+
+        const getting = JSON.parse(localStorage.getItem('players'))
+        function showCards(arr){
+            const template = arr.map(({nickname , image , country , team , role , id, isLiked}) => {
+                if(isLiked === null){
+                    return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i style="color: white" class="far fa-thumbs-up allBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i style="color: white" class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+                }else if(isLiked === false){
+                    return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i style="color: red" class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+                }else if(isLiked === true){
+                    return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i style="color: yellow" class="far fa-thumbs-up allBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+                }   
+            }).join('')
+            container.innerHTML = template;
+        }
+        window.addEventListener('load' , showCards(getting));
+        const containers = document.querySelector('.block1_body')
+const filter_player = document.querySelector('.filter_player')
+filter_player.addEventListener('change' , e => {
+    e.preventDefault();
+
+    const value = e.target.value
+    if(value === 'All'){
+        function showCards(arr){
+            const template = arr.map(({nickname , image , country , team , role , id}) => {
+                return `  <div class="block1_inner">
+                <div class="block1_title">
+                    <h2>${nickname}</h2>
                 </div>
-            </div>
-            <div class="centerBtn">
-                <button onclick="editCard(${id})">Edit</button>
-                <button onclick="deleteCard(${id})">Delete</button>
-                <button onclick="infoAppearBlock(${id})">more info</button>
-            </div>
-        </div>`
-        }else if(isLiked === false){
-            return `  <div class="block1_inner">
-            <div class="block1_title">
-                <h2>${nickname}</h2>
-            </div>
-            <div class="block1_picture" style="background: url('${image}') center / cover"></div>
-            <div class='block1_content'>
-                <ul>
-                    <li>${country}</li>
-                    <li>${team}</li>
-                    <li>${role}</li>
-                </ul>
-    
-                <div>
-                    <button onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
-                    <button onclick='unfavFunc(${id})'><i style="color: red" class="far fa-thumbs-down"></i></button>
+                <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                <div class='block1_content'>
+                    <ul>
+                        <li>${country}</li>
+                        <li>${team}</li>
+                        <li>${role}</li>
+                    </ul>
+        
+                    <div>
+                        <button class='likeBtn' onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
+                        <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                    </div>
                 </div>
-            </div>
-            <div class="centerBtn">
-                <button onclick="editCard(${id})">Edit</button>
-                <button onclick="deleteCard(${id})">Delete</button>
-                <button onclick="infoAppearBlock(${id})">more info</button>
-            </div>
-        </div>`
-        }else if(isLiked === true){
-            return `  <div class="block1_inner">
-            <div class="block1_title">
-                <h2>${nickname}</h2>
-            </div>
-            <div class="block1_picture" style="background: url('${image}') center / cover"></div>
-            <div class='block1_content'>
-                <ul>
-                    <li>${country}</li>
-                    <li>${team}</li>
-                    <li>${role}</li>
-                </ul>
-    
-                <div>
-                    <button onclick='favFunc(${id})'><i style="color: yellow" class="far fa-thumbs-up allBtn"></i></button>
-                    <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                
+                <div class="centerBtn">
+                    <button onclick="editCard(${id})">Edit</button>
+                    <button onclick="deleteCard(${id})">Delete</button>
+                    <button onclick="infoAppearBlock(${id})">more info</button>
                 </div>
-            </div>
-            <div class="centerBtn">
-                <button onclick="editCard(${id})">Edit</button>
-                <button onclick="deleteCard(${id})">Delete</button>
-                <button onclick="infoAppearBlock(${id})">more info</button>
-            </div>
-        </div>`
-        }   
-    }).join('')
-    container.innerHTML = template;
-}
-window.addEventListener('load' , showCards(getting));
+            </div>`
+            }).join('')
+            containers.innerHTML = template;
+        }
+        window.addEventListener('load' , showCards(getting));
+    }else if(value === 'favorite'){
+        const getNewPlayers = JSON.parse(localStorage.getItem('players'))
+        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , isLiked}) => {
+            if(isLiked === true){
+                return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i class="far fa-thumbs-up favBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+            }
+        }).join('')
+        containers.innerHTML = newTemplate;
+    }else if(value === 'unfavorite'){
+        const getNewPlayers = JSON.parse(localStorage.getItem('players'))
+        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , isLiked}) => {
+            if(isLiked === false){
+                return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i class="far fa-thumbs-up"></i></button>
+                            <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down unfavBtn"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="centerBtn">
+                        <button onclick="editCard(${id})">Edit</button>
+                        <button onclick="deleteCard(${id})">Delete</button>
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+            }
+        }).join('')
+        containers.innerHTML = newTemplate;
+    }
+})
+    }else if(getadmin === 'false'){
+
+        searchName.addEventListener('input' , e => {
+            const value = e.target.value.toUpperCase()
+        
+            const filterTemplate = JSON.parse(localStorage.getItem('players'))
+        
+            searchCountry.value = ''
+            searcTeam.value = ''
+        
+            const filteredCard = filterTemplate.filter(({nickname}) => nickname.toUpperCase().includes(value))
+            showCards(filteredCard)
+        })
+        searchCountry.addEventListener('input' , e => {
+            const value = e.target.value.toUpperCase()
+            searchName.value = ''
+            searcTeam.value = ''
+        
+            const filterTemplate = JSON.parse(localStorage.getItem('players'))
+        
+            const filteredCard = filterTemplate.filter(({country}) => country.toUpperCase().includes(value))
+            showCards(filteredCard)
+        })
+        searcTeam.addEventListener('input' , e => {
+            const value = e.target.value.toUpperCase()
+        
+            searchCountry.value = ''
+        
+            const filterTemplate = JSON.parse(localStorage.getItem('players'))
+            searchName.value = ''
+            
+            const filteredCard = filterTemplate.filter(({team}) => team.toUpperCase().includes(value))
+            showCards(filteredCard)
+        })
+
+        const getting = JSON.parse(localStorage.getItem('players'))
+        function showCards(arr){
+            const template = arr.map(({nickname , image , country , team , role , id, isLiked}) => {
+                if(isLiked === null){
+                    return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i style="color: white" class="far fa-thumbs-up allBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i style="color: white" class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="centerBtn">
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+                }else if(isLiked === false){
+                    return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i style="color: red" class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="centerBtn">
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+                }else if(isLiked === true){
+                    return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i style="color: yellow" class="far fa-thumbs-up allBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    <div class="centerBtn">
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+                }   
+            }).join('')
+            container.innerHTML = template;
+        }
+        window.addEventListener('load' , showCards(getting));
+        const containers = document.querySelector('.block1_body')
+    const filter_player = document.querySelector('.filter_player')
+    filter_player.addEventListener('change' , e => {
+        e.preventDefault();
+
+    const value = e.target.value
+    if(value === 'All'){
+        function showCards(arr){
+            const template = arr.map(({nickname , image , country , team , role , id}) => {
+                return `  <div class="block1_inner">
+                <div class="block1_title">
+                    <h2>${nickname}</h2>
+                </div>
+                <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                <div class='block1_content'>
+                    <ul>
+                        <li>${country}</li>
+                        <li>${team}</li>
+                        <li>${role}</li>
+                    </ul>
+        
+                    <div>
+                        <button class='likeBtn' onclick='favFunc(${id})'><i class="far fa-thumbs-up allBtn"></i></button>
+                        <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                    </div>
+                </div>
+                
+                <div class="centerBtn">
+                    <button onclick="infoAppearBlock(${id})">more info</button>
+                </div>
+            </div>`
+            }).join('')
+            containers.innerHTML = template;
+        }
+        window.addEventListener('load' , showCards(getting));
+    }else if(value === 'favorite'){
+        const getNewPlayers = JSON.parse(localStorage.getItem('players'))
+        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , isLiked}) => {
+            if(isLiked === true){
+                return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i class="far fa-thumbs-up favBtn"></i></button>
+                            <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="centerBtn">
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+            }
+        }).join('')
+        containers.innerHTML = newTemplate;
+    }else if(value === 'unfavorite'){
+        const getNewPlayers = JSON.parse(localStorage.getItem('players'))
+        const newTemplate = getNewPlayers.map(({nickname , image , country , team , role , id , isLiked}) => {
+            if(isLiked === false){
+                return `  <div class="block1_inner">
+                    <div class="block1_title">
+                        <h2>${nickname}</h2>
+                    </div>
+                    <div class="block1_picture" style="background: url('${image}') center / cover"></div>
+                    <div class='block1_content'>
+                        <ul>
+                            <li>${country}</li>
+                            <li>${team}</li>
+                            <li>${role}</li>
+                        </ul>
+            
+                        <div>
+                            <button onclick='favFunc(${id})'><i class="far fa-thumbs-up"></i></button>
+                            <button onclick='unfavFunc(${id})'><i class="far fa-thumbs-down unfavBtn"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="centerBtn">
+                        <button onclick="infoAppearBlock(${id})">more info</button>
+                    </div>
+                </div>`
+            }
+        }).join('')
+        containers.innerHTML = newTemplate;
+    }
+})}
+})
+
+
+// Admin
+
+const signInBtn = document.querySelector('.signInBtn')
+signInBtn.addEventListener('click' , e => {
+    e.preventDefault()
+    
+    const admin = document.querySelector('.admin')
+    admin.classList.toggle('show')
+
+    const adminCloseBtn = document.querySelector('.adminSignClose')
+    adminCloseBtn.addEventListener('click' , e => {
+    e.preventDefault()
+    admin.classList.remove('show')
+    
+    })
+    const adminSignCreate = document.querySelector('.adminSignCreate')
+    const adminName = document.querySelector('.adminName')
+    const adminPassword = document.querySelector('.adminPassword')
+    
+    adminSignCreate.addEventListener('click' , e => {
+        e.preventDefault()
+    
+        if(adminName.value === '' || adminPassword.value === '') alert('Hello world')
+    
+        if(adminName.value === 'admin' && adminPassword.value === 'admin'){
+            localStorage.setItem('admin' , 'true')
+            window.location.reload()
+        }
+    })
+})
+
+const signOutBtn = document.querySelector('.signOutBtn')
+signOutBtn.addEventListener('click' , e => {
+    e.preventDefault()
+
+    localStorage.setItem('admin' , 'false')
+    window.location.reload()
+})
 
 // FavBtn
 
@@ -651,7 +1060,7 @@ function unfavFunc(id){
     window.location.reload()
 }
 
-// deleteCard
+// editCard
 
 function editCard(id){
     const edit = document.querySelector('.edit_container')
@@ -722,64 +1131,6 @@ function deleteCard(id){
         deleteContainer.classList.remove('delete')
     })
 }
-
-// createBtn
-
-const createCard = document.querySelector('.createCardBtn')
-const cardContainers = document.querySelector('.create_container')
-
-createCard.addEventListener('click' , e => {
-    e.preventDefault();
-
-    cardContainers.classList.toggle('show')
-})
-
-const createCardConfirm = document.querySelector('.createCardConfirm')
-createCardConfirm.addEventListener('click' , e => {
-    e.preventDefault()
-
-    const newCardNickname = document.querySelector('.newCardNickname')
-    const newCardImage = document.querySelector('.newCardImage')
-    const newCardCountry = document.querySelector('.newCardCountry')
-    const newCardTeam = document.querySelector('.newCardTeam')
-    const newCardRole = document.querySelector('.newCardRole')
-
-    if(newCardNickname.value === '' || newCardImage.value === '' || newCardCountry.value === '' || newCardTeam.value === '' || newCardRole.value === ''){
-        return
-    }else if(newCardNickname.value !== '' || newCardImage.value !== '' || newCardCountry.value !== '' || newCardTeam.value !== '' || newCardRole.value !== ''){
-        const randomId = Math.floor(Math.random() * (1000 - 10) + 10)
-        const players = JSON.parse(localStorage.getItem('players'))
-        const newPlayers = players.map(item => {
-            if(randomId !== item.id){
-                const newCardTemplate = [
-                    {
-                        nickname: newCardNickname.value,
-                        image: newCardImage.value,
-                        country: newCardCountry.value,
-                        team: newCardTeam.value,
-                        role: newCardRole.value,
-                        isLiked: null,
-                        id: randomId
-                    }
-                ]
-                localStorage.setItem('newCardplayer' , JSON.stringify(newCardTemplate))
-                const getNewTemplate = [...Players , ... newCardTemplate]
-                console.log(getNewTemplate);
-                localStorage.setItem('players' , JSON.stringify(getNewTemplate))
-                window.location.reload()
-            }else{
-                return item
-            }
-        })
-    }
-})
-
-const closeCardCardConfirm = document.querySelector('.closeCardCardConfirm')
-closeCardCardConfirm.addEventListener('click' , e => {
-    e.preventDefault();
-
-    cardContainers.classList.remove('show')
-})
 
 // filter_player 
 

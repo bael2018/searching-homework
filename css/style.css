@@ -74,15 +74,21 @@ main{
     display: flex;
 }
 
+.search_block{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .search_block input{
     outline: none;
     border-radius: 10px;
     border: 1px solid white;
     margin: 0px 10px;
     background: rgb(255, 255, 255);
-    padding: 10px 20px;
+    padding: 15px 20px;
     transition: .3s;
-    width: 250px;
+    width: 30%;
     border: 1px solid grey;
 }
 
@@ -106,6 +112,7 @@ main{
     width: 28%;
     border-radius: 10px;
     padding: 10px;
+    padding-bottom: 0px;
     margin: 0px 15px;
     transition: .3s;
     background: rgb(82, 82, 82);
@@ -126,6 +133,16 @@ main{
     display: flex;
     padding: 15px 10px;
     justify-content: space-between;
+}
+
+.createCardBtn{
+    display: none !important;
+    text-align: center;
+    font-size: 20px;
+}
+
+.createCardBtn.show{
+    display: block !important;
 }
 
 .block1_content ul{
@@ -179,7 +196,9 @@ main{
 
 
 .filter_player{
-    width: 150px;
+    margin-top: 20px;
+    width: 15%;
+    height: 50px;
 }
 
 .fav.active{
@@ -465,7 +484,6 @@ main{
     .filter_player{
         margin-top: 30px;
         padding: 10px !important;
-        width: 300px;
     }
 }
 
@@ -511,11 +529,11 @@ main{
     }
 
     .search_block{
-        text-align: center;
+        flex-wrap: wrap;
     }
 
     .search_block input{
-        width: 96%;
+        width: 80% !important;
         margin: 0px;
         margin-bottom: 30px;
         padding: 20px 2%;
@@ -550,6 +568,10 @@ main{
     .block1_left{
         width: 80%;
     }
+
+    .search_block input{
+        width: 90% !important;
+    }
 }
 
 @media screen and (max-width: 460px){
@@ -573,9 +595,9 @@ main{
     .block1_inner{
         width: 90%;
     }
-    
-    .filter_player{
-        width: 250px;
+
+    .search_block input{
+        width: 100% !important;
     }
 }
 
@@ -768,18 +790,6 @@ main{
     color: rgb(34, 34, 34);
 }
 
-.createCardBtn{
-    background: white;
-    border-radius: 8px;
-    align-items: center;
-    display: flex;
-    font-weight: 500;
-    color: black;
-    cursor: pointer;
-    justify-content: center;
-    width: 150px;
-}
-
 
 /* edit_container */
 
@@ -886,4 +896,172 @@ main{
 .create_footer button:hover{
     background: white;
     color: rgb(34, 34, 34);
+}
+
+.block1_middle{
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.createCardBtn{
+    background: white;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    padding: 10px;
+    height: 25px;
+    margin-top: 20px;
+    width: 10%;
+}
+
+.signInBtn,
+.signOutBtn{
+    background: white;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    justify-content: center;
+    width: 10%;
+    height: 45px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 20px;
+    border: none;
+}
+
+.admin{
+    width: 40%;
+    left: 30%;
+    position: fixed;
+    border: 3px solid white;
+    background: rgb(56, 56, 56);
+    border-radius: 5px;
+    z-index: 10;
+    top: 25%;
+    transform: scale(.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+.admin.show{
+    transform: scale(1);
+    pointer-events: all;
+    opacity: 1;
+}
+
+.admin_container{
+    padding: 30px 25px; 
+}
+
+.admin_header{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.admin_body{
+    margin-top: 20px;
+}
+
+.admin_body div{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.admin_body div input{
+    width: 94%;
+    border: none;
+    outline: none;
+    padding: 14px 3%;
+    border-radius: 5px;
+}
+
+.admin_footer{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.admin_footer button{
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+    border-radius: 5px;
+    margin: 0px 10px;
+    outline: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: none;
+}
+
+.admin_footer button:hover{
+    background: white;
+    color: rgb(34, 34, 34);
+}
+
+@media screen and (max-width: 1150px){
+    
+    .signInBtn,
+    .signOutBtn{
+        width: 15%;
+    }
+
+    .createCardBtn{
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 1050px){
+
+    .signInBtn,
+    .signOutBtn{
+        width: 20%;
+    }
+
+    .createCardBtn{
+        width: 20%;
+    }
+
+    .filter_player{
+        margin-top: 20px;
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 800px){
+
+    .signInBtn,
+    .signOutBtn,
+    .filter_player,
+    .createCardBtn{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .signInBtn,
+    .signOutBtn,
+    .filter_player,
+    .createCardBtn{
+        width: 90%;
+    }
+
+    .createCardBtn{
+        margin-bottom: 0px;
+        padding: 14px 0px;
+    }
 }
